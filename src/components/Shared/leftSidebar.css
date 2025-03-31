@@ -1,0 +1,10 @@
+.profile-style{
+    display: flex;
+}
+.username-style{
+    display: flex;
+    flex-direction: column;
+}
+.gap-ul{
+    gap: 2.75rem;
+}
