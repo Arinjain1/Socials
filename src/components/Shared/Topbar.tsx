@@ -12,7 +12,7 @@ const {user} = useUserContext();
 
 
 useEffect(()=>{
-    if(isSuccess){
+    if(isSuccess){ 
         navigate(0);
     }
 },[isSuccess])

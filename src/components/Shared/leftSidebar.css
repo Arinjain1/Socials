@@ -8,3 +8,8 @@
 .gap-ul{
     gap: 2.75rem;
 }
+.my-logout{
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+}

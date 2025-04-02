@@ -5,12 +5,12 @@ import { useEffect } from 'react';
 import { useUserContext } from '@/context/AuthContext';
 import { INavLink } from '@/types';
 import { sidebarLinks } from '@/constants';
-import './leftSidebar.css'  
+import './leftSidebar.css'
 import { pathToFileURL } from 'url';
 import { isAsyncFunction } from 'util/types';
 
 const LeftSidebar = () => {
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
   const { mutate: signOut, isSuccess } = useSignOutAccount();
   const navigate = useNavigate();
   const { user } = useUserContext();
@@ -47,22 +47,20 @@ const LeftSidebar = () => {
         </Link>
         <ul className='flex flex-col gap-ul'>
           {sidebarLinks.map((link: INavLink) => {
-            const isActive = pathname ===link.route;
-            
+            const isActive = pathname === link.route;
+
             return (
-              <li key = {link.label}
-              className={`leftsidebar-link group ${
-                isActive && 'bg-primary-600'
-              }`}>
+              <li key={link.label}
+                className={`leftsidebar-link group ${isActive && 'bg-primary-600'
+                  }`}>
                 <NavLink to={link.route} className='flex gap-4 items-center p-4'>
-                  <img 
-                  src={link.imgURL} 
-                  alt={link.label} 
-                  className={`group-hover:invert-white ${
-                    isActive && 'invert-white'
-                  }`}
+                  <img
+                    src={link.imgURL}
+                    alt={link.label}
+                    className={`group-hover:invert-white ${isActive && 'invert-white'
+                      }`}
                   />
-                  
+
                   {link.label}
                 </NavLink>
               </li>
@@ -71,7 +69,12 @@ const LeftSidebar = () => {
           })}
         </ul>
       </div>
-      
+      <div className='my-logout'>
+        <Button variant="ghost" className='shad-button_ghost' onClick={() => signOut()}>
+          <img src="/assets/icons/logout.svg" alt="logout" />
+        </Button>
+        <p className='small-medium lg: base-medium'>Logout</p>
+      </div>
     </nav>
   )
 }

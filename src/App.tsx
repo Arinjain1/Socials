@@ -4,10 +4,11 @@ import './globals.css'
 import SigninForm from './_auth/forms/SigninForm';
 
 import SignupForm from './_auth/forms/SignupForm';
-import { Home } from './_root/pages';
+import { AllUsers, EditPost, Explore, PostDetails, Profile, Saved, UpdateProfile } from './_root/pages';
 import AuthLayout from './_auth/AuthLayout';
 import RootLayout from './_root/RootLayout';
 import { Toaster } from "@/components/ui/toaster"
+import CreatePost from './_root/pages/CreatePost';
 
 const App = () => {
   return (
@@ -22,7 +23,15 @@ const App = () => {
         {/*Private routes */}
         <Route>
             <Route element={<RootLayout/>}>
-            <Route index element={<Home/>}/>
+            <Route index element={<Explore/>}/>
+            <Route path='/explore' element={<Explore/>}/>
+            <Route path='/saved' element={<Saved/>}/>
+            <Route path='/all-users' element={<AllUsers/>}/>
+            <Route path='/create-post' element={<CreatePost/>}/>
+            <Route path='/update-post/:id' element={<EditPost/>}/>
+            <Route path='/posts/:id' element={<PostDetails/>}/>
+            <Route path='/profile/:id/*' element={<Profile/>}/>
+            <Route path='/update-profile/:id' element={<UpdateProfile/>}/>
             </Route>
         </Route>
        
