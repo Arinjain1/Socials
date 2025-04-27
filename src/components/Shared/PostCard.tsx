@@ -18,7 +18,7 @@ if(!post.creator) return;
         <div className='flex-between'>
             <div className='flex items-center gap-3'> 
                 <Link to={`/profile/${post?.$creator?.$id}`}>
-                <img src={post?.creator?.imageUrl || '/assets/icons/profile-placeholder.svg'}
+                <img src={post?.creator?.imageUrl || '/assets/images/profile-placeholder.svg'}
                 alt="creator" 
                 className='rounded-full w-12 lg:h-12'/>
                 </Link>
@@ -54,7 +54,7 @@ if(!post.creator) return;
                 })}
             </ul>
         </div>
-        <img src={'/assets/icons/profile-placeholder.svg'} 
+        <img src={'/assets/images/me.jpeg'} 
         className='post-card_img'
          />
         </Link>
