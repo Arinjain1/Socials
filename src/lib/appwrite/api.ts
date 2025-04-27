@@ -177,6 +177,7 @@ export async function getRecentPosts(){
         [Query.orderDesc("$createdAt"), Query.limit(20)]
     )
 
+console.log('post from db',posts)
     if(!posts) throw Error;
     return posts;
 }

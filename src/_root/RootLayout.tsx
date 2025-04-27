@@ -10,7 +10,7 @@ const RootLayout = () => {
       <Topbar/>
       <LeftSidebar/>
 
-      <section>
+      <section style={{position: "relative", width: "100%"}}>
         <Outlet/>
       </section>
 
